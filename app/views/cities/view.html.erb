@@ -1,0 +1,13 @@
+
+
+<a href="/cities/new">Add A New City</a>
+
+<% City.all.values.each do |value| %>
+<h1>City: <%= value.name %></h1>
+  <p>
+  The population is: <%= value.population %> </br>
+  Landmark: <%= value.landmark %> </br>
+  Temperature: <%= value.weather[:temperature] %> K </br>
+  It looks like: <%= value.weather[:description] %>
+  </p>
+  <% end %>

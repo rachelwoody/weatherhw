@@ -1,0 +1,14 @@
+<%= form_with local: true, url: '/cities/postupdate', method: "post" do |form| %>
+ Name of City You Want to Update <%= form.text_field :name %>
+ Enter Important Landmark <%= form.text_field :landmark %>
+ Population <%= form.text_field :population %>
+  <%= form.submit %>
+ <% end %>
+
+ <!--
+
+ Since @City is not a new instance of the Cities class,
+ form_for will automatically send it to the createupdate path?
+
+ When submitted, the form will be routed to the createupdate action.
+ -->

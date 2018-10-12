@@ -1,1 +1,25 @@
 <!-- Your code here -->
+<% if not @w.nil? %>
+   <h1><%= @w[:city] %></h1>
+   <p>
+     It's <%= @w[:temperature] %> Kelvin
+     and it looks like <%= @w[:description] %>
+   </p>
+
+   <% end %>
+
+   <%= form_with local: true, method: "get" do |form| %>
+    Enter City <%= form.text_field :city %>
+     <% form.submit %>
+
+    <% end %>
+
+<%= City.all.each do |c| %>
+<% if not c.nil? %>
+  <h1> <%= c.name %></h1>
+  <p>
+    It's <%= c.temperature %> K
+    and it looks like <%= c.description %>
+  </p>
+  <% end %>
+  <% end %>
